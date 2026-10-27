@@ -1,14 +1,14 @@
 info:
-  name: create single teacher
+  name: Delete single house
   type: http
-  seq: 4
+  seq: 5
 
 http:
-  method: POST
-  url: http://localhost:3000/teachers
+  method: DELETE
+  url: http://localhost:3000/houses/
   body:
     type: json
-    data: '{ "name":"frida","house":"hus"}'
+    data: ""
   auth: inherit
 
 settings:

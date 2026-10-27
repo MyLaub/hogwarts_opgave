@@ -1,11 +1,11 @@
 info:
-  name: update single students
+  name: Get all houses
   type: http
-  seq: 4
+  seq: 1
 
 http:
-  method: PUT
-  url: http://localhost:3000/teachers
+  method: GET
+  url: http://localhost:3000/houses/
   auth: inherit
 
 settings:

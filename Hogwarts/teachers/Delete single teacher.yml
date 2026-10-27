@@ -1,11 +1,11 @@
 info:
-  name: create new student
+  name: Delete single teacher
   type: http
-  seq: 3
+  seq: 5
 
 http:
-  method: POST
-  url: http://localhost:3000/student/:id
+  method: DELETE
+  url: http://localhost:3000/teachers/:id
   params:
     - name: id
       value: ""

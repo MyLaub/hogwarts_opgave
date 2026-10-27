@@ -1,11 +1,11 @@
 info:
-  name: delete single student
+  name: Get single house
   type: http
-  seq: 5
+  seq: 2
 
 http:
-  method: DELETE
-  url: http://localhost:3000/student/:id
+  method: GET
+  url: http://localhost:3000/houses/:id
   params:
     - name: id
       value: ""

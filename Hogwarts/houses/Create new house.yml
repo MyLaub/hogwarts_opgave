@@ -1,0 +1,26 @@
+info:
+  name: Create new house
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: http://localhost:3000/houses
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "name": "linnea",
+        "color": "rød",
+        "founder": "my"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

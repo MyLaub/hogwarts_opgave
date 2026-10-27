@@ -1,11 +1,11 @@
 info:
-  name: update new teacher
+  name: Update single course
   type: http
-  seq: 3
+  seq: 4
 
 http:
   method: PUT
-  url: http://localhost:3000/teachers/:id
+  url: http://localhost:3000/courses/:id
   params:
     - name: id
       value: ""
