@@ -1,14 +1,11 @@
 info:
-  name: create single teacher
+  name: Get all teachers
   type: http
-  seq: 4
+  seq: 1
 
 http:
-  method: POST
+  method: GET
   url: http://localhost:3000/teachers
-  body:
-    type: json
-    data: '{ "name":"frida","house":"hus"}'
   auth: inherit
 
 settings:

@@ -1,11 +1,11 @@
 info:
-  name: create new student
+  name: Update single student
   type: http
-  seq: 3
+  seq: 4
 
 http:
-  method: POST
-  url: http://localhost:3000/student/:id
+  method: PUT
+  url: http://localhost:3000/students/:id
   params:
     - name: id
       value: ""
