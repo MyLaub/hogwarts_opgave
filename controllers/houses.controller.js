@@ -20,9 +20,8 @@ export async function getHouseById(req, res) {
   const id = req.params.id;
   const house = await housesRepository.getHouseById(id);
 
- if (teacher) {
-    res.status(200).json(teacher);
-  }  
-    throw new HTTPError(404, "teacher does not exist");
+  if (house) {
+    return res.status(200).json(house);
+  }
+  throw new HTTPError(404, "house does not exist");
 }
-
