@@ -13,7 +13,7 @@ export async function getCourseById(id) {
     return result.rows[0];
   }
 }
-
+// test
 export async function createCourse(course) {
   const result = await pool.query(
     "INSERT INTO courses (name, teacher, students, type, level, school_year) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
