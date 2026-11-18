@@ -18,7 +18,7 @@ export async function getTeacherById(req, res) {
   const teacher = await teachersRepository.getTeacherById(id);
 
   if (teacher) {
-    res.status(200).json(teacher);
+    return res.status(200).json(teacher);
   }  
     throw new HTTPError(404, "teacher does not exist");
 }
