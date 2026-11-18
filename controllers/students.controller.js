@@ -1,18 +1,18 @@
 import * as studentsRepository from "../repositories/students.repository.js";
 
 export async function getAllStudents(req, res) {
-  try {
+  // try {
     const allStudents = await studentsRepository.getAllStudents();
     console.log("all Students:", allStudents);
     res.json(allStudents);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Database error", code: err.code });
-  }
+  // } catch (err) {
+  //   console.error(err);
+  //   res.status(500).json({ error: "Database error", code: err.code });
+  // }
 }
 
 export async function getStudentById(req, res) {
-  try {
+  // try {
     const id = req.params.id;
     const student = await studentsRepository.getStudentById(id);
 
@@ -21,27 +21,27 @@ export async function getStudentById(req, res) {
     } else {
       res.sendStatus(404);
     }
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Database error" });
-  }
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json({ error: "Database error" });
+  // }
 }
 
 //alle nedenstående controllers er identiske med getStudentById - med undtagelse af createStudent, da der ikker er noget "der ikke findes" i forvejen, når vi opretter en ny student. Den ligner derfor getAllStudents.
 
 export async function createStudent(req, res) {
-  try {
+  // try {
     const student = req.body;
     const newStudent = await studentsRepository.createStudent(student);
     res.status(201).json(newStudent);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Database error" });
-  }
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json({ error: "Database error" });
+  // }
 }
 
 export async function updateStudent(req, res) {
-  try {
+  // try {
     const id = req.params.id;
     const student = req.body;
     const updatedStudent = await studentsRepository.updateStudent(id, student);
@@ -51,14 +51,14 @@ export async function updateStudent(req, res) {
     } else {
       res.sendStatus(404);
     }
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Database error" });
-  }
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json({ error: "Database error" });
+  // }
 }
 
 export async function deleteStudent(req, res) {
-  try {
+  // try {
     const id = req.params.id;
     const deleted = await studentsRepository.deleteStudent(id);
 
@@ -67,8 +67,8 @@ export async function deleteStudent(req, res) {
     } else {
       res.sendStatus(404);
     }
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Database error" });
-  }
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json({ error: "Database error" });
+  // }
 }

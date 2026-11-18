@@ -1,4 +1,5 @@
 import express from "express";
+import errorhandler from "./errorhandling/errorhandler.js";
 
 //Er flyttet til Routes nu.
 // import * as housesController from "./controllers/houses.controller.js";
@@ -14,6 +15,9 @@ import coursesRouter from "./routes/courses.router.js";
 const app = express();
 const port = 3000;
 
+app.listen(port, () => console.log(`Server kører på http://localhost:${port}`));
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -26,4 +30,6 @@ app.use("/teachers", teachersRouter);
 app.use("/students", studentsRouter);
 app.use("/courses", coursesRouter);
 
-app.listen(port, () => console.log(`Server kører på http://localhost:${port}`));
+app.use(errorhandler);
+
+

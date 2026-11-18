@@ -1,18 +1,18 @@
 import * as coursesRepository from "../repositories/courses.repository.js";
 
 export async function getAllCourses(req, res) {
-  try {
+  // try {
     const allCourses = await coursesRepository.getAllCourses();
     console.log("all Courses:", allCourses);
     res.json(allCourses);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Database error", code: err.code });
-  }
+  // } catch (err) {
+  //   console.error(err);
+  //   res.status(500).json({ error: "Database error", code: err.code });
+  // }
 }
 
 export async function getCourseById(req, res) {
-  try {
+  // try {
     const id = req.params.id;
     const course = await coursesRepository.getCourseById(id);
 
@@ -21,25 +21,25 @@ export async function getCourseById(req, res) {
     } else {
       res.sendStatus(404);
     }
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Database error" });
-  }
+    // } catch (err) {
+    //   console.log(err);
+    //   res.status(500).json({ error: "Database error" });
+    // }
 }
 
 export async function createCourse(req, res) {
-  try {
+  // try {
     const course = req.body;
     const newCourse = await coursesRepository.createCourse(course);
     res.status(201).json(newCourse);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Database error" });
-  }
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json({ error: "Database error" });
+  // }
 }
 
 export async function updateCourse(req, res) {
-  try {
+  // try {
     const id = req.params.id;
     const course = req.body;
     const updatedCourse = await coursesRepository.updateCourse(id, course);
@@ -49,14 +49,14 @@ export async function updateCourse(req, res) {
     } else {
       res.sendStatus(404);
     }
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Database error" });
-  }
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json({ error: "Database error" });
+  // }
 }
 
 export async function deleteCourse(req, res) {
-  try {
+  // try {
     const id = req.params.id;
     const deleted = await coursesRepository.deleteCourse(id);
 
@@ -65,8 +65,8 @@ export async function deleteCourse(req, res) {
     } else {
       res.sendStatus(404);
     }
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ error: "Database error" });
-  }
+  // } catch (err) {
+  //   console.log(err);
+  //   res.status(500).json({ error: "Database error" });
+  // }
 }
